@@ -1,0 +1,124 @@
+# Category weights for importance rubric (tunable without code changes).
+category_weights:
+  policy: 1.0
+  state: 0.98      # State-level domestic news (protests, exams, recruitment, bandhs)
+  economy: 0.95
+  markets: 0.92    # Stocks, Nifty/Sensex, mutual funds, IPOs, FII/DII flows
+  tech: 0.9
+  science: 0.9
+  geopolitics: 0.95
+  health: 0.85
+  sports: 0.75
+  entertainment: 0.6
+  general: 0.7
+
+# Signal weights — v2 rebalanced for tier-weighted corroboration + India relevance
+signal_weights:
+  tier_corroboration: 0.20
+  recency: 0.15
+  entity_scope: 0.12
+  category: 0.10
+  historical_continuity: 0.08
+  india_relevance: 0.35
+
+# LLM judgment blends with rule base (0=all rules, 1=all LLM)
+llm_blend_weight: 0.35
+
+rubric_version: "v2.1"
+
+# India relevance strategy: "keyword" (v1) or "llm" (future extensible)
+india_strategy: keyword
+
+# Category base boost for India relevance (inherent domain importance)
+india_relevance_category_boost:
+  state: 0.3        # Highest — state-level directly affects citizens
+  policy: 0.2
+  economy: 0.25
+  markets: 0.25     # Indian markets (Nifty/Sensex/FII) are inherently domestic
+  geopolitics: 0.15
+  health: 0.1
+  sports: 0.1       # Cricket/IPL dominate Indian sports consumption
+
+# India-relevance keywords (lowercase, partial match)
+india_relevance_keywords:
+  - india
+  - indian
+  - modi
+  - rbi
+  - nifty
+  - sensex
+  - rupee
+  - mumbai
+  - delhi
+  - bangalore
+  - bengaluru
+  - chennai
+  - kolkata
+  - hyderabad
+  - monsoon
+  - gst
+  - parliament
+  - lok sabha
+  - rajya sabha
+  - supreme court
+  - aadhaar
+  - upi
+  - bharat
+  - isro
+  - drdo
+  - sebi
+  - pib
+  - diaspora
+  - nri
+  - fii
+  - remittance
+  - crude oil
+  - indian economy
+  - indian market
+  - indian business
+  - indian startup
+  - make in india
+  - digital india
+  - atmanirbhar
+  # Major state capitals & cities (state-level relevance)
+  - jharkhand
+  - ranchi
+  - dhanbad
+  - jamshedpur
+  - patna
+  - lucknow
+  - kanpur
+  - varanasi
+  - pune
+  - nagpur
+  - indore
+  - bhopal
+  - bhubaneswar
+  - guwahati
+  - chandigarh
+  - jaipur
+  - ahmedabad
+  - surat
+  - vadodara
+  - coimbatore
+  - mysuru
+  - mangalore
+  - visakhapatnam
+  - vijayawada
+
+# Category keywords for lightweight detection
+category_keywords:
+  policy: ["parliament", "legislation", "regulation", "lok sabha", "rajya sabha", "president", "election", "constitution", "amendment", "bill", "ordinance", "cabinet", "minister", "pm ", "prime minister", "home ministry", "finance ministry", "external affairs", "defence ministry", "law ministry", "parliamentary", "standing committee", "joint committee", "select committee", "privilege motion", "adjournment motion", "no confidence", "question hour", "zero hour", "administration", "government", "governance", "bureaucracy", "civil service", "ias", "ips", "ifs", "bureaucrat", "secretary", "additional secretary", "joint secretary", "director", "deputy secretary", "under secretary", "policy", "scheme", "mission", "programme", "yojana", "initiative", "reform", "amendment act"]
+  economy: ["economy", "economic", "inflation", "gdp", "market", "interest rate", "trade", "tariff", "recession", "rbi", "reserve bank", "monetary policy", "fiscal", "budget", "gst", "tax", "revenue", "deficit", "borrowing", "bond", "yield", "rupee", "forex", "foreign investment", "fdi", "fii", "nifty", "sensex", "stock market", "equity", "mutual fund", "insurance", "banking", "nbfc", "credit", "lending", "npas", "bad loans", "bank recapitalization", "disinvestment", "privatization", "psu", "public sector", "financial", "finance", "fintech", "payment", "upi", "digital payment", "wallet", "gateway", "merchant", "pos", "atm", "branch", "loan", "mortgage", "housing finance", "vehicle finance", "personal loan", "credit card", "debit card", "prepaid", "kyc", "aml", "compliance", "regulator", "sebi", "irdai", "pfrda"]
+  tech: ["technology", "artificial intelligence", "software", "startup", "chip", "cyber", "machine learning", "deep learning", "llm", "generative ai", "foundation model", "semiconductor", "fabrication", "foundry", "vlsi", "embedded", "iot", "5g", "6g", "quantum", "blockchain", "crypto", "web3", "fintech", "edtech", "healthtech", "agritech", "spacetech", "dronetech", "robotics", "automation", "saas", "cloud", "data center", "hyperscaler", "github", "openai", "anthropic", "google deepmind", "meta ai", "microsoft ai", "nvidia", "amd", "intel", "qualcomm", "mediatek", "tpu", "gpu", "cuda", "pytorch", "tensorflow", "jax", "huggingface", "transformers", "bert", "gpt", "llama", "mistral", "gemini"]
+  science: ["science", "research", "study", "arxiv", "climate", "climate change", "global warming", "carbon", "emission", "greenhouse", "net zero", "paris agreement", "cop", "ipcc", "space", "physics", "biology", "isro", "drdo", "csir", "icmr", "iiser", "iisc", "tifr", "jncasr", "satellite", "launch", "rocket", "pslv", "gslv", "gaganyaan", "chandrayaan", "aditya", "mars", "moon", "astronomy", "astrophysics", "particle", "cern", "higgs", "quantum", "fusion", "renewable", "solar", "wind", "hydrogen", "battery", "energy storage", "forest", "forests", "tropical", "rainforest", "deforestation", "biodiversity", "ecosystem", "species", "extinction", "conservation", "wildlife", "sanctuary", "national park", "tiger reserve", "elephant reserve", "biosphere", "wetland", "mangrove", "coral reef", "ocean acidification", "sea level rise", "glacier", "permafrost", "arctic", "antarctic"]
+  geopolitics: ["war", "conflict", "nato", "ukraine", "russia", "sanctions", "military", "geopolit", "india china", "india pakistan", "india bangladesh", "india nepal", "india sri lanka", "india maldives", "india bhutan", "india myanmar", "india afghanistan", "india china border", "ladakh", "arunachal", "sikkim", "doklam", "galwan", "pangong", "depsang", "quad", "indo pacific", "asean", "saarc", "brics", "g20", "un ", "unsc", "unhcr", "who", "wto", "imf", "world bank", "adbi", "apec", "shanghai cooperation", "sco", "rare earth", "critical minerals", "supply chain", "semiconductor supply", "foreign ministry", "mea ", "external affairs", "jaishankar", "diplomat", "embassy", "consulate", "high commission", "summit", "bilateral", "multilateral", "strategic partnership", "defence cooperation", "maritime security", "indian ocean", "south china sea", "malacca strait", "hormuz strait", "bab el mandeb", "red sea", "gulf of aden", "piracy", "anti piracy", "naval exercise", "malabar", "rimpac", "milan", "china", "chinese", "beijing", "white house", "pentagon", "state department", "administration", "uk ", "britain", "british", "london", "europe", "european union", "eu ", "france", "germany", "italy", "spain", "canada", "australia", "japan", "south korea", "north korea", "taiwan", "philippines", "vietnam", "indonesia", "malaysia", "singapore", "thailand", "myanmar", "bangladesh", "sri lanka", "nepal", "bhutan", "maldives", "afghanistan", "iran", "saudi arabia", "uae", "qatar", "kuwait", "oman", "bahrain", "israel", "palestine", "gaza", "west bank", "hamas", "hezbollah", "houthis", "yemen", "syria", "iraq", "turkey", "egypt", "jordan", "lebanon", "subpoena", "press freedom", "journalist", "media freedom", "free press", "censorship", "surveillance", "whistleblower", "leak", "classified", "intelligence", "cia", "fbi", "nsa", "mi6", "mosad", "raw", "ib", "espionage", "spy", "diplomatic row", "expel", "persona non grata", "sanctions", "tariff war", "trade war"]
+  health: ["health", "disease", "vaccine", "hospital", "pandemic", "medical", "ayushman", "bharat", "health insurance", "public health", "epidemic", "outbreak", "virus", "bacteria", "antimicrobial resistance", "amr", "tuberculosis", "malaria", "dengue", "chikungunya", "japanese encephalitis", "kala azar", "filariasis", "leprosy", "polio", "immunization", "mission indradhanush", "poshan", "nutrition", "stunting", "wasting", "anaemia", "maternal mortality", "infant mortality", "nhm", "national health mission", "medical college", "pg seats", "neet", "nursing", "paramedical"]
+  state: ["students", "university", "exam", "paper leak", "recruitment", "vacancy", "district", "block", "panchayat", "vidhan sabha", "mlas", "chief minister", "governor", "bandh", "strike", "agitation", "dharna", "farmer", "farmers", "agrarian", "land acquisition", "caste", "reservation", "quota", "police", "law and order", "crime", "rape", "atrocity", "lynching", "communal", "riot", "curfew", "section 144", "internet shutdown", "power cut", "water crisis", "drought", "flood", "disaster", "relief", "compensation", "scheme", "yojana", "beneficiary", "pds", "midday meal", "anganwadi", "ashram", "hostel", "scholarship", "fellowship", "teacher", "professor", "appointment", "transfer", "suspension", "corruption", "scam", "irregularity", "enquiry", "cbi", "income tax", "raid", "arrest", "bail", "court", "high court", "verdict", "judgment", "order", "directive", "guidelines", "notification", "circular", "ordinance", "act", "amendment", "zila", "tehsil", "mandal", "pradesh", "sarkar", "mantri", "vidhayak", "sachivalaya", "collector", "sp ", "dm ", "sdm", "bdo", "tehsildar", "janata", "lok", "adalat", "nyayalaya", "thana", "chowki", "kotwali"]
+  markets: ["nifty", "sensex", "bse", "nse", "share price", "stock price", "ipo", "listing", "bull", "bear", "rally", "correction", "crash", "fii", "dii", "institutional investor", "mutual fund", "sip", "nav", "amc", "etf", "portfolio", "wealth management", "smallcap", "midcap", "largecap", "penny stock", "dividend", "buyback", "bonus", "split", "rights issue", "ofs", "block deal", "bulk deal", "insider trading", "promoter", "shareholding", "quarterly results", "earnings", "profit", "revenue", "ebitda", "pe ratio", "eps", "book value", "market cap", "trading volume", "circuit breaker", "upper circuit", "lower circuit", "option", "futures", "derivative", "commodity", "gold price", "silver price", "crude oil price", "mcx", "ncdex", "sgx nifty", "dow jones", "nasdaq", "s&p 500"]
+  entertainment: ["celebrity", "movie", "film", "bollywood", "tollywood", "ott", "netflix", "amazon prime", "disney hotstar", "jio cinema", "music", "entertainment", "tv show", "album", "actor", "actress", "director", "box office", "trailer", "release", "web series", "award", "filmfare", "oscar", "grammy", "iifa", "reality show", "bigg boss", "kbc"]
+  sports: ["sports", "cricket", "ipl", "bcci", "test match", "odi", "t20", "world cup", "champions trophy", "asia cup", "ranji", "isl", "pro kabaddi", "pkl", "badminton", "pbl", "wrestling", "boxing", "hockey", "football", "fifa", "premier league", "la liga", "champions league", "olympics", "commonwealth games", "asian games", "athletics", "tennis", "formula 1", "f1", "motogp", "chess", "fide", "marathon", "nba", "championship", "medal", "podium", "qualifier", "semifinal", "final"]
+
+entity_scope_keywords:
+  broad: ["government", "state", "citizens", "population", "millions"]
+  narrow: ["local", "individual", "person arrested", "single"]

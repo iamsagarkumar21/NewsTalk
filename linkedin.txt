@@ -1,0 +1,27 @@
+appinventiv@appinventiv-Precision-3480:~$ curl -X POST https://www.linkedin.com/oauth/v2/accessToken \
+  --data-urlencode "grant_type=authorization_code" \
+  --data-urlencode "code=AQRSaqxzmPR8vz2BwfQ5k2KuVIVac36ff9INy-oufCs0XOYgzntI9bNNpo1yYWghz6MiftQnTCovSlUJ16VjA4Cjq6E1oWjB4CUxrkMGpEcWiyDuIowC1bip9V6OumI9HFAnCb1u2-WQxluuEt9ZfLqDZuH0WBPK7rW-HmTbHFMyl9yk4nLLd6r7eS16pfcBPvhFRIX5LXH4hakCp_M" \
+  --data-urlencode "redirect_uri=https://localhost:3000/callback" \
+  --data-urlencode "client_id=86d5c6bf4dtysk" \
+  --data-urlencode "client_secret=WPL_AP1.GoJGyHzl2gjxptiz.tdpqhg=="
+{"access_token":"AQVuwHrZ0*****************TJJ53ekAcehDtJc9kcJkEwmIYSTBNJhU1cWKfjmuHeRFOjGeUZEpU6DxG9hkqD7Tsn4j4tscXhkUREYnWevqke-QZXELHw0Zbw_y8DyFCvTb1gclFIIbyva-58x3AlpVKOAMqTkIdfnQWP-JsBXdzqrheMzFFiaCcw5ypaQQqOHjVNTE2WHrncRRZZujgWGf3ggMceXFow802CYzoCXzLZU6JfHRJ06u_TWUO-ICli3YwX2VK_llZJAKQpzXod8xo8Mqf4MLOlnWJmcL1nCccRbS9LJpLGEaYEb5cFcezbP4ITY8JiUtND38A","expires_in":5183999,"scope":"openid,profile,w_member_social","token_type":"Bearer","id_token":"eyJraWQiO**************Q5NzIzZmYiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3d3dy5saW5rZWRpbi5jb20vb2F1dGgiLCJhdWQiOiI4NmQ1YzZiZjRkdHlzayIsImlhdCI6MTc5MjczNzA4NywiZXhwIjoxNzkyNzQwNjg3LCJzdWIiOiJyeTkwTGFZRjdxIiwibmFtZSI6IlNhZ2FyIEt1bWFyIiwiZ2l2ZW5fbmFtZSI6IlNhZ2FyIiwiZmFtaWx5X25hbWUiOiJLdW1hciIsInBpY3R1cmUiOiJodHRwczovL21lZGlhLmxpY2RuLmNvbS9kbXMvaW1hZ2UvdjIvRDU2MDNBUUhaRFVTeWFtcjdiQS9wcm9maWxlLWRpc3BsYXlwaG90************************joiZW5fVVMifQ.OPZIlLz29AwEyGFkR3_uVVJsqTFnOUbJlIa4uIX-5b5ROMBHcgTSGij6QVprdmYagubMBHcIhmKunPtNVwDCNVQhezFgEgGjlQsgWv7LWmXDnGMnFU_k4XQ4jFHaOebenq3LEbvogWFAXjZLHk1HHp9kHfkKDEDcP9F2o1IMUkE6IHxI-CY587k-tJCQ760QA9zNrGvAGPABuHxfzk5rVhYsIF0koYna7zUenBLH8vWU0U2C3B3IyMsEoUE-Y8jJUAnZPNFlBypwxrz21pzDRFwh9xIDoIgNMv-yBbBK1j-JKHX8khXu_dt8zVBvmrLqISXTtNB32M1-I6gkJyeM-jU1Y1xOFKKyLYWfqHx8xXPACDneEKje0FL8mFga5_9tq6H6xZdLPgLUW9zBbnPTAFZU3WCT2D9oAMWNoweBnqLYOnBglJmvRtegbkKaT1VSmotPXy58XFS2U9kMPwVjUl7n6hiwfOinr9S5UcpTP9SiZ6bO40Zka7yT63T1uX_cHWpNjJeGRQNBtWEcrlbWsuHUjJp_r3FRZS9ePsyJcVLhix9TT7jFnVfs_BqG7KekahPv_7wK5qmRCK2bkC7wRCN6QeJUE42JRdHNM6OwdtMrrsblPySZ8HNj3hz6sLOmUB8cpvSViJOENFKe7MaMTTrIJKE6jO-is1CEJRGyg_k"}appinventiv@appinventiv-Precision-3480:~$ ^C
+appinventiv@appinventiv-Precision-3480:~$ curl -H "Authorization: Bearer AQVuwHrZ0OIJmUXyWdA8dIjAnqTMmDNLChJXnTJJ53**********STBNJhU1cWKfjmuHeRFOjGeUZEpU6DxG9hkqD7Tsn4j4tscXhkUREYnWevqke-QZXELHw0Zbw_y8DyFCvTb1gclFIIbyva-58x3AlpVKOAMqTkIdfnQWP-JsBXdzqrheMzFFiaCcw5ypaQQqOHjVNTE2WHrncRRZZujgWGf3ggMceXFow802CYzoCXzLZU6JfHRJ06u_TWUO-ICli3YwX2VK_llZJAKQpzXod8xo8Mqf4MLOlnWJmcL1nCccRbS9LJpLGEaYEb5cFcezbP4ITY8JiUtND38A" \
+  https://api.linkedin.com/v2/userinfo
+{"name":"Sagar Kumar","sub":"ry&***YF7q","locale":{"country":"US","language":"en"},"given_name":"Sagar","family_name":"Kumar","picture":"https://media.licdn.com/dms/image/v2/D5603AQHZDUSyamr7bA/profile-displayphoto-shrink_800_800/B56ZmAFHY0KMAk-/0/1758790450443?e=1794441600&v=beta&t=XnAJm58VBQHGQHlFR5-YPbPALl******xpSwys6c"}appinventiv@appinventiv-Precision-3480:~$ date +%s%3N
+1792738468799
+appinventiv@appinventiv-Precision-3480:~$ echo $(($(date +%s%3N) + 5183999 * 1000))
+1797922615605
+
+
+
+
+
+appinventiv@appinventiv-Precision-3480:~/LinkedInAuto$ openssl rand -hex 32
+35eb6a8edbc00e63a0df5a0492924ffe1ea1c692059d36383ee48125e3724d65
+appinventiv@appinventiv-Precision-3480:~/LinkedInAuto$ 
+
+https://dash.cloudflare.com/1deedbec50e0ca8ece596d82a552cda8/workers/subdomain
+
+
+
+

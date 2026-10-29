@@ -1,0 +1,28 @@
+Transcript:
+
+Providers: OpenAI, ElevenLabs, Sarvam, Deepgram, Groq, AssemblyAI, Azure Speech and Google Cloud, openroputer, fish tts, minimax, amazon poly, 
+Free: Supwrtonic 3, kyutai, kokoro, chatbox nano, 
+
+clone bhi agar ho sake to.
+
+
+
+BugZy:
+Researched Claude Code and Cursor integration options for bug-reporting SDK data, comparing APIs, MCP, security, sandboxing, and cost.
+Bug deduplication, root-cause analysis/team classification, and Claude Code deep-link integration via MCP, while identifying key security risks.
+Connected with Anirud and discussed edge cases and possibilities and what we can do.
+Wonder Royal:-
+- Investigated and resolved PDF text extraction issues affecting Hindi, Marathi, Punjabi, and Gujarati documents that use legacy fonts. Fixed Hindi and Marathi extraction using OCR support to obtain readable Devanagari text, and added explicit unsupported-script logging for Punjabi and Gujarati to prevent silent extraction failures and incorrect AI-generated summaries.
+
+Took a depth analysis of how tts and stt work internally. 
+Connected with rahul and shared some local models and few approaches which we are using, and tested saleQ POC with rahul sir. 
+Researched and mapped the end-to-end execution flow of the Breaking Silence speech intelligence accelerator (covering audio ingestion/resampling, Silero VAD turn detection, worker isolation, and ROVER consensus).
+Analyzed the technical architecture and end-to-end execution pipeline of the game-of-tones universal TTS engine.
+Researched input/output contracts, text normalization, process-isolated worker IPC protocols, and real-time audio chunking/streaming mechanics.
+And Tested with Frontend both tts and stt poc, and currently stt poc needs improvement so vo b aaj fix karenge. 
+
+
+tampermonkey, linkedin notifucation, 
+
+
+

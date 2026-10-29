@@ -1,0 +1,24 @@
+Fine Tune;-
+
+Dataset Analysis Result:-
+
+Metric		Result	Meaning
+Examples	475	Small but workable for a first SFT experiment
+Messages/example	3 exactly	Likely system → user → assistant consistently
+Min tokens	123	No extremely tiny examples
+Avg tokens	158.5	Very short conversations
+P90	179	90% fit below this
+P95	184	95% fit below this
+Max	213	Very small overall
+
+
+anirud?->done
+block store ke cred path, DB schema.
+cron job, (cloude ka access milega ya, code me hame hi karna padega)
+DB, ya redis,
+que servise.
+
+updates,
+1. Wonder Royal project me knowledge base wale me hi sirf AI  work hai.(as per discussion with @sahil)
+2. From our end this is done, and these things we need from backend once they provide it we will continue. @davidar.
+@sukhpreet @arjun.

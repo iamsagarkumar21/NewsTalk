@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+  <title>Jiya is calling</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="call">
+  <main class="callbox">
+    <div id="avatar" class="avatar" aria-hidden="true">J</div>
+    <h1 id="title" style="margin:0 0 4px;font-size:1.4rem">Jiya is calling</h1>
+    <div id="state" class="state" role="status">Tap Answer to start</div>
+    <p id="caption" class="caption" aria-live="polite"></p>
+
+    <div class="call-actions">
+      <button id="answer" class="primary">Answer</button>
+      <button id="mute" class="hidden">Mute mic</button>
+      <button id="hangup" class="danger hidden">Hang up</button>
+    </div>
+
+    <form id="typeForm" class="typebox hidden">
+      <input id="typeInput" type="text" placeholder="Or type a question" maxlength="300" autocomplete="off" aria-label="Type a question for Jiya">
+      <button class="primary" type="submit">Ask</button>
+    </form>
+    <p id="notes" class="hint"></p>
+  </main>
+  <script src="call.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+cost calci
+Rag
+weather
+
+
+######################
+RAG:
+Type of Doc(with image of n not?)
+Docs is dynamic of what ? 
+Live pe Ai insights generate honge ?
+what changes is there any comparioson ?
+
+Calci:
+On what basis we recommend?
+
+Ai Insights:
+No data source?	
+bag ledger?, coin history, etc.
+
+
+
+Model selection framework ? 
+
+
+
+###############################################################
+
+What a good summary and insights means ?
+Heading is fixed for the summary/insights ?
+Are versions explicitly provided? How are versions identified?
+What does "urgent" mean?(Deadline < 3 days → Urgent, ?)
+What is a "major change"?
+what AI should never recommend?
+Any word count limits ? 
+Is there any Latency requirement?(within 6 secs or what ?)
+
+
+
+1. Documents(images, tables can with text, confired, hindi, english)
+What document types?(done)
+How many documents per request?(done)
+Maximum document size/pages?(done)
+Scanned documents?(done)
+Tables/images/charts?(done)
+Multiple languages?(done)
+Document versions?
+2. Summary
+What exactly should Summary contain?
+length of insight and summary? max and min?
+Number of key findings?	
+Should it include actions?
+Should it include citations?
+Should it be executive or detailed?
+3. Insights
+What types of insights?
+Change detection?
+Impact analysis?
+Risk?
+Recommendations?
+Anomaly detection?
+Cross-document reasoning?
+4. Business Rules
+Definition of major/minor changes?
+Definition of urgent/high/normal?
+
+
+
+
+AI/LLM Service via REST API for document analysis and insight generation. 
+
+
+
+these are the 

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Jiya - Your daily news call</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">Jiya<small id="tagline"></small></div>
+      <div class="row">
+        <button class="ghost" id="langToggle" aria-label="Change interface language">हिं</button>
+        <button class="ghost hidden" id="signOut"></button>
+      </div>
+    </header>
+
+    <main id="app" aria-live="polite"></main>
+  </div>
+  <div id="toast" class="toast hidden" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>

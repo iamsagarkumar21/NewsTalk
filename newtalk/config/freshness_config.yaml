@@ -1,0 +1,52 @@
+# Freshness window — articles/clusters older than this are excluded from today's pipeline.
+# Override via env: FRESHNESS_WINDOW_HOURS=24
+freshness_window_hours: 24
+
+# Trend scout agent categories (full rubric set, excluding entertainment/sports)
+trend_scout_categories:
+  - policy
+  - economy
+  - markets
+  - tech
+  - science
+  - geopolitics
+  - health
+  - sports
+  - entertainment
+  - state_politics
+
+# Max web-search tool calls per trend_scout run (free-tier guard)
+trend_scout_max_searches: 6
+
+# Max tool calls per context_writer cluster (fetch + search combined)
+context_writer_max_tool_calls: 2
+
+# Dynamic briefing selection — tunable based on real daily outputs
+# Stories below this score are never included (calibrate from diagnostics)
+min_story_score: 4.0
+
+# Maximum stories in a briefing (cap, never a target)
+max_stories: 8
+
+# How many top-ranked clusters get context (selection buffer above max_stories)
+context_top_n: 12
+
+# Categorical quotas for balanced briefing (hard minimums — fill quotas first, then global ranking)
+# Order matters: filled in priority order
+category_quotas:
+  state: 2        # State-level domestic (protests, exams, recruitment, bandhs, law & order)
+  policy: 2       # National policy/parliament/legislation
+  economy: 1      # RBI, GST, budget, trade
+  markets: 1      # Nifty/Sensex, IPO, FII/DII, stock-specific
+  geopolitics: 1  # International relations, borders, global conflicts
+  tech: 1         # Tech, AI, startups, science
+  # Remaining slots filled from global ranking — covers sports, entertainment, health, etc.
+# Categories a user explicitly follows use (min_story_score - relief), floor 2.5, so low-weight
+# categories (sports, entertainment, health) can still reach people who asked for them.
+interest_score_relief: 1.0
+
+# Extra clusters per followed category that get context even if outside the global top-N.
+context_per_category: 2
+
+# Hard ceiling of stories in one personal call (short calls feel better than long ones)
+max_stories_per_call: 6
